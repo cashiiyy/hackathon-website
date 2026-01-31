@@ -7,23 +7,20 @@
 
 .process-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  gap: 0;
+  gap: 30px;
   width: 100%;
-  max-width: 1200px;
-  padding: 0 2rem;
+  max-width: 1400px;
+  padding: 0 4rem;
 }
 
 .process-card {
   flex: 1;
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  position: relative;
-  transition: all 0.4s ease;
+  border: 1px solid rgba(57, 255, 20, 0.1);
+  padding: 40px;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   opacity: 0;
   transform: translateY(30px);
 }
@@ -34,65 +31,50 @@
 }
 
 .process-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--color-accent-blue);
-  box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
-  transform: translateY(-5px);
+  background: rgba(57, 255, 20, 0.02);
+  border-color: var(--color-process);
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.1);
 }
 
 .step-number {
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.05);
-  position: absolute;
-  top: 10px;
-  right: 20px;
+  font-family: var(--font-title);
+  font-size: 3rem;
+  color: var(--color-process);
+  opacity: 0.2;
+  margin-bottom: 2rem;
+  display: block;
 }
 
 .process-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  color: var(--color-text);
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-process);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .process-card p {
+  font-family: var(--font-main);
   font-size: 0.9rem;
   color: var(--color-text-dim);
-  line-height: 1.6;
+  line-height: 1.8;
+  font-weight: 300;
+  letter-spacing: 0.05em;
 }
 
 .process-connector {
-  width: 40px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.1);
-  position: relative;
+  display: none; /* Removed for cleaner minimalist look */
 }
 
-.process-connector::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-}
-
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .process-container {
     flex-direction: column;
     gap: 40px;
-  }
-  .process-connector {
-    width: 1px;
-    height: 40px;
+    align-items: center;
   }
   .process-card {
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
   }
 }

@@ -30,7 +30,7 @@ const Background = () => {
       }
 
       getRandomColor() {
-        const colors = ['#ff3e3e', '#ffd700', '#00d2ff', '#39ff14'];
+        const colors = ['#00d2ff', '#ffd700', '#ff3e3e', '#39ff14'];
         return colors[Math.floor(Math.random() * colors.length)];
       }
 
@@ -40,27 +40,15 @@ const Background = () => {
 
         if (this.x < 0 || this.x > width) this.vx *= -1;
         if (this.y < 0 || this.y > height) this.vy *= -1;
-        
-        // Mouse interaction
-        if (mouse.x && mouse.y) {
-          const dx = this.x - mouse.x;
-          const dy = this.y - mouse.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 100) {
-            this.x += dx * 0.01;
-            this.y += dy * 0.01;
-          }
-        }
       }
 
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = this.color;
+        ctx.globalAlpha = 0.5;
         ctx.fill();
-        ctx.shadowBlur = 0;
+        ctx.globalAlpha = 1;
       }
     }
 
@@ -82,7 +70,7 @@ const Background = () => {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / connectionDistance})`;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${(1 - dist / connectionDistance) * 0.2})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -101,10 +89,6 @@ const Background = () => {
     };
 
     window.addEventListener('resize', resize);
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-    });
 
     resize();
     init();
@@ -126,7 +110,7 @@ const Background = () => {
         width: '100%',
         height: '100%',
         zIndex: 0,
-        background: '#0a0a0a',
+        background: '#050505',
         pointerEvents: 'none'
       }}
     />

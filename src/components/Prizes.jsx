@@ -2,9 +2,9 @@ import React from 'react';
 import './Prizes.css';
 
 const prizes = [
-  { rank: '1st Place', amount: '₹XX,XXX', perks: ['Winner Trophy', 'Certificates', 'Premium Swag'], color: 'yellow' },
-  { rank: '2nd Place', amount: '₹XX,XXX', perks: ['Runner-up Trophy', 'Certificates', 'Cool Swag'], color: 'blue' },
-  { rank: '3rd Place', amount: '₹XX,XXX', perks: ['Third Place Trophy', 'Certificates', 'Basic Swag'], color: 'red' },
+  { rank: '1st Place', amount: '₹XX,XXX', perks: ['Winner Trophy', 'Certificates', 'Premium Swag'] },
+  { rank: '2nd Place', amount: '₹XX,XXX', perks: ['Runner-up Trophy', 'Certificates', 'Cool Swag'] },
+  { rank: '3rd Place', amount: '₹XX,XXX', perks: ['Third Place Trophy', 'Certificates', 'Basic Swag'] },
 ];
 
 const Prizes = () => {
@@ -13,7 +13,7 @@ const Prizes = () => {
       <h2 className="section-title">PRIZES & INCENTIVES</h2>
       <div className="prizes-container">
         {prizes.map((prize, index) => (
-          <div key={index} className={`prize-card glow-${prize.color}`}>
+          <div key={index} className="prize-card">
             <h3 className="rank">{prize.rank}</h3>
             <div className="amount">{prize.amount}</div>
             <ul className="perks">

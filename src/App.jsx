@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Background from './components/Background';
 import Hero from './components/Hero';
@@ -8,13 +8,19 @@ import Registration from './components/Registration';
 import InfoSection from './components/InfoSection';
 import Prizes from './components/Prizes';
 import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import Intro from './components/Intro';
 
 function App() {
+  const [introDone, setIntroDone] = useState(false);
+
   return (
     <div className="app-container">
+      {!introDone && <Intro onFinish={() => setIntroDone(true)} />}
       <Background />
-      <main>
-        <Hero />
+      <Navbar isVisible={introDone} />
+      <main className={introDone ? 'content-visible' : 'content-hidden'}>
+        <Hero isIntroDone={introDone} />
         <InfoSection 
           id="about"
           title="ABOUT HACKATHON"
@@ -33,7 +39,7 @@ function App() {
           title="HACKATHON THEME"
           align="center"
           content={
-            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', letterSpacing: '0.2em', marginTop: '20px' }} className="glow-blue">
+            <div className="theme-announcement">
               TO BE ANNOUNCED
             </div>
           }

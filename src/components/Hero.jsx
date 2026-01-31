@@ -1,31 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Hero.css';
 
-const Hero = () => {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setVisible(true), 100);
-    return () => clearTimeout(timer);
-  }, []);
-
+const Hero = ({ isIntroDone }) => {
   return (
     <section className="hero">
-      <div className={`hero-content ${visible ? 'visible' : ''}`}>
+      <div className={`hero-content ${isIntroDone ? 'visible' : ''}`}>
         <h1 className="hero-title">
-          <span className="glow-blue">SCTCE</span> HACKATHON 2026
+          <span className="premium-text">SCTCE</span> <span className="retro-text">HACKATHON 2026</span>
         </h1>
         <p className="hero-subtitle">
           Organized by <span className="highlight">Coding Club</span> of Sree Chitra Thirunal College of Engineering
         </p>
-        <div className="scroll-indicator">
-          <div className="mouse">
-            <div className="wheel"></div>
-          </div>
-          <div className="arrow">
-            <span></span>
-            <span></span>
-          </div>
+        <div className="hero-actions">
+          <a href="https://sctcoding.club/">
+            <button className="btn-primary">REGISTER NOW</button>
+          </a>
         </div>
       </div>
     </section>

@@ -17,18 +17,21 @@ const Registration = () => {
         <h2 className="section-title small">REQUIREMENTS</h2>
         <ul className="requirements-list">
           <li>
-            <span className="bullet glow-red"></span>
+            <span className="bullet"></span>
             Open to undergraduate students
           </li>
           <li>
-            <span className="bullet glow-yellow"></span>
+            <span className="bullet"></span>
             Team or individual participation allowed
           </li>
           <li>
-            <span className="bullet glow-blue"></span>
+            <span className="bullet"></span>
             Must be available for entire hackathon duration
           </li>
         </ul>
+        <div className="registration-actions">
+          <button className="btn-primary">REGISTER NOW</button>
+        </div>
       </div>
     </section>
   );
