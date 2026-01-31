@@ -1,0 +1,98 @@
+.process-section {
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.process-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.process-card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.process-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.process-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-accent-blue);
+  box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.step-number {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.05);
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.process-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--color-text);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.process-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+  line-height: 1.6;
+}
+
+.process-connector {
+  width: 40px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.process-connector::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+@media (max-width: 900px) {
+  .process-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .process-connector {
+    width: 1px;
+    height: 40px;
+  }
+  .process-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
