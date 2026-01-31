@@ -11,9 +11,9 @@ const Footer = () => {
           </div>
           <p className="footer-tagline">Innovating the future, one byte at a time.</p>
           <div className="social-links">
-            <a href="#" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">GITHUB</a>
+            <a href="https://www.instagram.com/codingclubsctce?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+            <a href="https://discord.com/invite/7w2wt3tvZa" target="_blank" rel="noopener noreferrer">DISCORD</a>
+            <a href="https://chat.whatsapp.com/LTBlf3CJoYB1BdZDVwLDuP" target="_blank" rel="noopener noreferrer">WHATSAPP</a>
           </div>
           <div className="copyright">
             © 2026 Coding Club SCTCE. All rights reserved.
