@@ -1,16 +1,94 @@
-# React + Vite
+﻿# Dhyuthi 7.0
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Official website for Dhyuthi 7.0** — the Annual Technical Symposium of the IEEE SCT Student Branch.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Website
 
-## React Compiler
+> https://cashiiyy.github.io/hackathon-website/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Repository
 
-## Expanding the ESLint configuration
+> https://github.com/cashiiyy/hackathon-website
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Features
+
+- Distinctive visual identity: "Signal · Structure · Spark"
+- Official IEEE and IEEE SCT SB branding throughout
+- Full event information architecture (Hero, About, Highlights, Timeline, Announcements, FAQ, CTA)
+- Pre-event content system (Announcements with badge variants)
+- Content-driven architecture — all event data in `src/config/`
+- TypeScript with strict mode
+- Responsive — mobile to 4K
+- Accessible — semantic HTML, ARIA, keyboard nav, reduced-motion
+- Zero external UI/animation library dependencies
+
+## Tech Stack
+
+React 19 · Vite 7 · TypeScript · Vanilla CSS (CSS custom properties)
+
+## Architecture
+
+```
+src/
+├── config/       # event.ts, navigation.ts, content.ts
+├── components/
+│   ├── layout/   # Navbar, Footer
+│   ├── ui/       # Button, Badge, SectionHeading
+│   ├── sections/ # Hero, About, Highlights, Timeline, Announcements, FAQ, CTA
+│   └── motion/   # Reveal (scroll animation wrapper)
+└── assets/       # IEEE + SCT SB logos
+```
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Deploy
+
+```bash
+npm run deploy   # → GitHub Pages
+```
+
+## Documentation
+
+See [`/Doc`](./Doc/) for:
+
+- [Design System](./Doc/design-system.md)
+- [Architecture](./Doc/architecture.md)
+- [Component Architecture](./Doc/component-architecture.md)
+- [Technical Approach](./Doc/technical-approach.md)
+- [Backend Architecture (Proposed)](./Doc/backend-architecture.md)
+- [Deployment](./Doc/deployment.md)
+- [Decisions](./Doc/decisions.md)
+- [Final Review](./Doc/final-review.md)
+
+## Design Philosophy
+
+> "Design with intent. Build with structure. Make it reusable."
+
+Visual concept: **Signal · Structure · Spark** — editorial, technical, premium.  
+Not: particles, random neon, generic AI-dark-website.
+
+## Reusability
+
+Update `src/config/event.ts` + `src/config/content.ts` → new edition ready.  
+Swap assets + accent color → another IEEE event.
+
+## Credits
+
+IEEE SCT Student Branch · Sree Chitra Thirunal College of Engineering, Trivandrum  
+Typefaces: Space Grotesk, Inter, JetBrains Mono (Google Fonts)  
+Logos: Official IEEE Brand Assets
